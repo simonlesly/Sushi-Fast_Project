@@ -15,7 +15,6 @@ panier:Panier
   }
   //méthode pour consulter le contenue du panier
   public getPanier(){
-  
     return this.panier
   }
 

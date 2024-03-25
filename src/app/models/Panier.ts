@@ -4,14 +4,12 @@ export class Panier{
     
     id: number
     listeDeBoxe: Array<any>
-
     statut: boolean
 
 
     constructor(id: number,listeDeBoxe: Array<any>,statut: boolean) {
         this.id = id
         this.listeDeBoxe = listeDeBoxe
-   
         this.statut =statut
     }
 
