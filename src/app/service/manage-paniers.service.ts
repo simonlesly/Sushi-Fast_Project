@@ -19,7 +19,9 @@ panier:Panier
   }
 
 //méthode pour ajouter une boxe au panier
-  public addBoxes(){}
+  public addBoxes(panier:Panier){
+    this.panier.listeDeBoxe.push(Boxes)
+  }
 
 //méthode pour supprimer une boxe du panier
   public deleteBoxes(){}
