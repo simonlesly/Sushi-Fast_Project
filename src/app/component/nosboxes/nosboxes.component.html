@@ -1,0 +1,25 @@
+<style>
+    table.center {
+    margin-left: auto;
+    margin-right: auto;
+    }
+    </style>
+    <table *ngIf="boxes.length > 0" class="table is-striped center">
+    <thead>
+    <tr>
+    <th>Nom</th>
+    <th>image</th>
+    <th>Prix</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let boxe of boxes"> 
+    <td>{{ boxe.nom }}</td>
+    <td><img class="card-img-top"[src]="'http://localhost:8080/api/image'+'/'+ boxe.image"alt="{{ boxe.nom }}"style="width: 20em;"></td>
+    <td>{{ boxe.prix }}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <div style="font-weight:bold;">Nombre de Boxes : {{ boxes.length }}</div>
+    </tfoot>
+    </table>
