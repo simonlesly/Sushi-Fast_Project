@@ -1,9 +1,10 @@
 import { Boxes } from "./Boxes"
+import { LigneBoxes } from "./LigneBoxes"
 
 export class Panier{
     
     id: number
-    listeDeBoxe: Array<any>
+    listeDeBoxe: Array<LigneBoxes>
     statut: boolean
 
 
@@ -16,8 +17,10 @@ export class Panier{
     getPrix(){
         let prix =0
         for (const uneLigne of this.listeDeBoxe) {
-            prix+=uneLigne.prix * uneLigne.quantite
+            prix+=uneLigne.boxe.prix * uneLigne.qte
         }
         return prix
     }
+
+    
 }

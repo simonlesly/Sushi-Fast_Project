@@ -8,6 +8,7 @@ export class Boxes {
     image: string
     aliments: Array <any>
     saveurs: Array <any>
+  
 
     constructor(id: number, nom : string, pieces : number , prix : number, image : string, aliments: Array <any>,saveurs: Array <any>) {
 
