@@ -12,16 +12,16 @@
     <div  class="card  mx-auto" style="width: 18rem;">
         <img [src]="'http://localhost:8080/api/image'+'/'+ boxe.image" class="card-img-top" alt="{{ boxe.nom }}">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a routerLink="/details-boxes" class="btn btn-primary"></a><button> <i class="bi bi-question-circle-fill" routerLink="/details-boxes"></i></button>
-
-            <td>
-                <div *ngFor="let boxe of boxes">
-                   <a  class="btn btn-primary" [routerLink]="'/details-boxes/'+boxe.id" routerLinkActive="active"> Voir les détails de {{ boxe.nom }} </a>
-                </div>
-            </td>
+            <h5 class="card-title text-center" >{{ boxe.nom }}
+                <a class="btn"><i class="bi bi-question-circle-fill" [routerLink]="'/details-boxes/'+boxe.id" routerLinkActive="active"></i></a>
+            </h5>
+            <a routerLink="/panier" class="btn btn-primary">Ajouter au panier </a> <a>{{ boxe.prix }}€</a>
+            
+            <td><button (click)="ajouter(boxe)">ajouter à votre panier</button></td>
+              
+                
+             
+         
 
         </div>
     </div>

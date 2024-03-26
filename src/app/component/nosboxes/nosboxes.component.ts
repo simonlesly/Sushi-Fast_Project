@@ -19,4 +19,11 @@ export class NosboxesComponent {
   this.boxes = resultat
 })
 }
+ajouter(uneBox:Boxes){
+  console.log("test")
+  this.panierService.addBoxes(uneBox,1)
+}
+
+
+
 }

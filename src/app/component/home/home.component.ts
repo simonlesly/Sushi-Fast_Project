@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Boxes } from '../../modules/Boxes';
 
 @Component({
   selector: 'app-home',

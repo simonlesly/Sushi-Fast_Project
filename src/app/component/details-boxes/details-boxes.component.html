@@ -13,15 +13,25 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let boxe of boxes"> 
-    <td>{{ boxe.nom }}</td>
-
-    <div *ngFor="let aliments of boxe.aliments"> 
-    <td>{{ aliments.quantite}} {{ aliments.nom}}</td>
-    </div>
-    
-    <td>{{ boxe.saveurs}}</td>
-    </tr>
+        <tr> 
+        <td>{{ laBox?.nom }}
+            <li style="margin-bottom: 2em; font-weight: bold; font-size: 1.2em;;"></li>
+            <img class="card-img-top" [src]="'http://localhost:8080/api/image'+'/'+ laBox?.image" alt="{{ laBox?.nom }}" style="width: 20em;">
+            <ul style="font-weight: normal; font-size: normal;"></ul>
+        </td>
+        <div *ngFor="let aliments of laBox?.aliments">
+            <td>{{ aliments.quantite }} {{ aliments.nom }}</td>
+        </div>
+        <td>{{ laBox?.saveurs }}</td>
+        </tr>
     </tbody>
     <tfoot>
+
+        <div class="card" style="width: 18rem;">
+            <img src="http://localhost:8080/api/image"+ 
+            class="card-img-top" alt="{{ laBox?.nom }}" style="width: 20em;">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
    
