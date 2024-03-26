@@ -1,25 +1,30 @@
 <style>
     table.center {
-    margin-left: auto;
-    margin-right: auto; 
+        margin-left: auto;
+        margin-right: auto;
     }
-    </style>
-    <table *ngIf="boxes.length > 0" class="table is-striped center">
-    <thead>
-    <tr>
-    <th>Nom</th>
-    <th>image</th>
-    <th>Prix</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let boxe of boxes"> 
-    <td>{{ boxe.nom }} <button> <i class="bi bi-question-circle-fill" routerLink="/details-boxes"></i></button></td>
-    <td><img class="card-img-top"[src]="'http://localhost:8080/api/image'+'/'+ boxe.image"alt="{{ boxe.nom }}"style="width: 20em;"></td>
-    <td>{{ boxe.prix }}</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <div style="font-weight:bold;">Nombre de Boxes : {{ boxes.length }}</div>
-    </tfoot>
-    </table>
+</style>
+
+
+<div *ngIf="boxes.length > 0" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 ">
+
+    <div *ngFor="let boxe of boxes" class="col my-2">
+    <div  class="card  mx-auto" style="width: 18rem;">
+        <img [src]="'http://localhost:8080/api/image'+'/'+ boxe.image" class="card-img-top" alt="{{ boxe.nom }}">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a routerLink="/details-boxes" class="btn btn-primary"></a><button> <i class="bi bi-question-circle-fill" routerLink="/details-boxes"></i></button>
+
+            <td>
+                <div *ngFor="let boxe of boxes">
+                   <a  class="btn btn-primary" [routerLink]="'/details-boxes/'+boxe.id" routerLinkActive="active"> Voir les détails de {{ boxe.nom }} </a>
+                </div>
+            </td>
+
+        </div>
+    </div>
+</div>
+
+</div>
