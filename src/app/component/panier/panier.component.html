@@ -14,8 +14,10 @@
     <tbody>
     <td>{{ panier.id}}</td>
     <td> <span *ngFor="let uneLigne of panier.listeDeBoxe">
-    {{uneLigne.boxe.nom}} X {{uneLigne.qte}}
+    {{uneLigne.boxe.nom}} X {{uneLigne.qte}} <br>
+    
     </span></td>
+    
 
     </tbody>
     </table>
