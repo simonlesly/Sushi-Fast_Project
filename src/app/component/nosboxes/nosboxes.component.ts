@@ -25,7 +25,6 @@ export class NosboxesComponent {
   }
 
   ajouter(uneBox:Boxes){
-    console.log("test")
     this.panierService.addBoxes(uneBox,1)
    
   }

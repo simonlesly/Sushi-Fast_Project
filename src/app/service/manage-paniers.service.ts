@@ -12,7 +12,7 @@ import { LigneBoxes } from '../models/LigneBoxes';
 export class ManagePaniersService {
 panier:Panier
   constructor() { 
-    this. panier =JSON.parse(localStorage.getItem("panier") ?? "{'id':1,'listeDeBox':[],'statut':false}")
+    this. panier =JSON.parse(localStorage.getItem("panier") ?? JSON.stringify(new Panier(1,[],true)))
    
   }
   //méthode pour consulter le contenue du panier
