@@ -13,9 +13,9 @@
        <img [src]="'http://localhost:8080/api/image'+'/'+ boxe.image" class="card-img-top" alt="{{ boxe.nom }}">
        <div class="card-body">
            <h5 class="card-title text-center" >{{ boxe.nom }}
-               <a class="btn"><i class="bi bi-question-circle-fill" [routerLink]="'/details-boxes/'+boxe.id" routerLinkActive="active"></i></a>
+               <a class="btn"><i class="bi bi-question-circle-fill" [routerLink]="'/details-boxe'+boxe.id" routerLinkActive="active"></i></a>
            </h5>
-           <a routerLink="/panier" class="btn btn-primary" (click)="ajouter(boxe)">Ajouter au panier </a> <a>{{ boxe.prix }}€</a>
+           <a class="btn btn-primary" (click)="ajouter(boxe)">Ajouter au panier </a> <a>{{ boxe.prix }}€</a>
        </div>
    </div>
 </div>
