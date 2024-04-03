@@ -1,27 +1,23 @@
 <style>
    table.center {
-   margin-left: auto;
-   margin-right: auto;
+       margin-left: auto;
+       margin-right: auto;
    }
-   </style>
-   <table *ngIf="boxes.length > 0" class="table is-striped center">
-   <thead>
-   <tr>
-   <th>Nom</th>
-   <th>image</th>
-   <th>Prix</th>
-   </tr>
-   </thead>
-   <tbody>
-   <tr *ngFor="let boxe of boxes"> 
-   <td>{{ boxe.nom }}</td>
-   <td>
-      <img class="card-img-top"[src]="'http://localhost:8080/api/image'+'/'+ boxe.image"alt="{{ boxe.nom }}"style="width: 20em;">
-    
-   </td>
-   <td>{{ boxe.prix }}</td>
-   <td><button (click)="ajouter(boxe)">ajouter à votre panier</button></td>
-   </tr>
-   </tbody>
-   </table>
+</style>
 
+
+<div *ngIf="boxes.length > 0" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 ">
+
+   <div *ngFor="let boxe of boxes" class="col my-2">
+   <div  class="card  mx-auto" style="width: 18rem;">
+       <img [src]="'http://localhost:8080/api/image'+'/'+ boxe.image" class="card-img-top" alt="{{ boxe.nom }}">
+       <div class="card-body">
+           <h5 class="card-title text-center" >{{ boxe.nom }}
+               <a class="btn"><i class="bi bi-question-circle-fill" [routerLink]="'/details-boxes/'+boxe.id" routerLinkActive="active"></i></a>
+           </h5>
+           <a routerLink="/panier" class="btn btn-primary" (click)="ajouter(boxe)">Ajouter au panier </a> <a>{{ boxe.prix }}€</a>
+       </div>
+   </div>
+</div>
+
+</div>

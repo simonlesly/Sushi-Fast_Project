@@ -1,1 +1,12 @@
+
 /* You can add global styles to this file, and also import other style files */
+main{
+    background-image:url("./assets/f1.png")
+}
+
+
+css nos box et detail box
+
+table{
+    --bs-table-bg:"#00";
+}

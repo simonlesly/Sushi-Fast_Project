@@ -48,4 +48,14 @@ panier:Panier
 //méthode pour afficher statut du panier 
 public statutPanier(){}
 
+
+//méthode pour avoir le prix total du panier
+getPrix(){
+  let prix =0
+  for (const uneLigne of this.panier.listeDeBoxe) {
+      prix+=uneLigne.boxe.prix * uneLigne.qte
+  }
+  return prix.toFixed(2)
+}
+
 } 

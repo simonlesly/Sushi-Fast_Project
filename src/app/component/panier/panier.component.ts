@@ -13,9 +13,13 @@ export class PanierComponent {
   panier : Panier
   constructor(private managePaniersService : ManagePaniersService){
     this.panier= this.managePaniersService.getPanier()
+
     
   }
 
+  getPrix(){
+    return this.managePaniersService.getPrix()
+  }
   
 }
 
