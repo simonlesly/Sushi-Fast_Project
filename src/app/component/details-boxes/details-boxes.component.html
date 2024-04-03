@@ -1,37 +1,24 @@
 <style>
     table.center {
-    margin-left: auto;
-    margin-right: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
-    </style>
-    <table *ngIf="boxes.length > 0" class="table is-striped center">
-    <thead>
-    <tr>
-    <th>Nom de la boxe</th>
-    <th>quantité</th>
-    <th>Saveurs</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr> 
-        <td>{{ laBox?.nom }}
-            <li style="margin-bottom: 2em; font-weight: bold; font-size: 1.2em;;"></li>
-            <img class="card-img-top" [src]="'http://localhost:8080/api/image'+'/'+ laBox?.image" alt="{{ laBox?.nom }}" style="width: 20em;">
-            <ul style="font-weight: normal; font-size: normal;"></ul>
-        </td>
-        <div *ngFor="let aliments of laBox?.aliments">
-            <td>{{ aliments.quantite }} {{ aliments.nom }}</td>
-        </div>
-        <td>{{ laBox?.saveurs }}</td>
-        </tr>
-    </tbody>
-    <tfoot>
+</style>
+
 
         <div class="card" style="width: 18rem;">
-            <img src="http://localhost:8080/api/image"+ 
-            class="card-img-top" alt="{{ laBox?.nom }}" style="width: 20em;">
+            <img [src]="'http://localhost:8080/api/image/'+laBox?.image" class="card-img-top" alt="{{ laBox?.nom }}"
+                style="width: 20em;">
             <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card-text">
+                <ul>
+                    <h3>Les aliments </h3>
+                    <div *ngFor="let aliments of laBox?.aliments">
+                        <div>{{ aliments.quantite }} {{ aliments.nom }}</div>
+                    </div>
+                </ul>
+                <div>{{ laBox?.saveurs }}</div>
+
             </div>
-          </div>
-   
+            </div>
+        </div>

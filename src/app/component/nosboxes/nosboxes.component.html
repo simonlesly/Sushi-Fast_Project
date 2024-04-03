@@ -15,14 +15,7 @@
             <h5 class="card-title text-center" >{{ boxe.nom }}
                 <a class="btn"><i class="bi bi-question-circle-fill" [routerLink]="'/details-boxes/'+boxe.id" routerLinkActive="active"></i></a>
             </h5>
-            <a routerLink="/panier" class="btn btn-primary">Ajouter au panier </a> <a>{{ boxe.prix }}€</a>
-            
-            <td><button (click)="ajouter(boxe)">ajouter à votre panier</button></td>
-              
-                
-             
-         
-
+            <a routerLink="/panier" class="btn btn-primary" (click)="ajouter(boxe)">Ajouter au panier </a> <a>{{ boxe.prix }}€</a>
         </div>
     </div>
 </div>

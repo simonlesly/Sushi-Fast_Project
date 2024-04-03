@@ -20,22 +20,14 @@ export class ManageBoxesService {
 //methode qui ajoute les boxes au panier
 public addBoxes() {}
 
-
-
-
 //methode qui supprime les boxes du panier
 public delete() {}
-
-
-
 
 //methode qui consulte le contenue ldu panier
 public getPanier() {
   let panier= Panier
   return panier
 }
-
-
 
 //methode qui calcule le prix du panier
 public pricePanier() {}

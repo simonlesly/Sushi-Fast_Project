@@ -15,10 +15,14 @@
     <td>{{ panier.id}}</td>
     <td> <span *ngFor="let uneLigne of panier.listeDeBoxe">
     {{uneLigne.boxe.nom}} X {{uneLigne.qte}} <br>
-    
+
+    <td> <span *ngFor="let uneLigne of panier.listeDeBoxe">
+        {{uneLigne.boxe.nom}} X {{uneLigne.qte}} 
+        <button (click)="supprimer(uneLigne)">Supprimer de votre panier</button>
+        <button (click)="reduire(uneLigne)">Réduire</button><br><br>
     </span></td>
     
-
+    </span></td>
     </tbody>
     </table>
 

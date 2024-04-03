@@ -15,11 +15,14 @@ import { ActivatedRoute } from '@angular/router';
     laBox:Boxes|undefined
     constructor(manageBoxesServices: ManageBoxesService, private route: ActivatedRoute) {
       this.boxes = []
+      
       manageBoxesServices.getBoxes().subscribe((resultat) => {
         this.boxes = resultat
         const boxeId = Number(this.route.snapshot.paramMap.get('id'));
+        console.log(boxeId);
+        
        this.laBox= this.boxes.find((uneBox)=>uneBox.id==boxeId)
-        console.log(this.boxes)
+        console.log(this.laBox)
       })
     }
   }
