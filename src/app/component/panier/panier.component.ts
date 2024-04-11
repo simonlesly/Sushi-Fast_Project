@@ -15,11 +15,12 @@ export class PanierComponent {
 
     
   }
+  // Fonction pour supprimer une boxe
   supprimer(uneLigne : LigneBoxes){
     this.managePaniersService.deleteBoxe(uneLigne.boxe)
     this.panier = this.managePaniersService.getPanier()
   }
-
+// Fonction pour reduire la quantité de boxe
   reduire(uneLigne : LigneBoxes){
     this.managePaniersService.reducePanier(uneLigne.boxe)
     this.panier = this.managePaniersService.getPanier()
