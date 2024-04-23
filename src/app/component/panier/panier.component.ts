@@ -25,4 +25,10 @@ export class PanierComponent {
     this.managePaniersService.reducePanier(uneLigne.boxe)
     this.panier = this.managePaniersService.getPanier()
   }
+  // Fonction pour augmenter la quantité de boxe
+  augmenter(uneLigne : LigneBoxes){
+    this.managePaniersService.increasePanier(uneLigne.boxe)
+    this.panier = this.managePaniersService.getPanier()
+  }
 }
+
