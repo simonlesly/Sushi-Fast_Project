@@ -88,10 +88,28 @@ public reducePanier(uneBox : Boxes){
   localStorage.setItem("panier", JSON.stringify(this.panier));
 }
 
-  
+  public increasePanier(uneBox: Boxes) {
+  // Rechercher l'élément à augmenter dans le panier en utilisant son identifiant
+  const itemToIncreaseQte: number = uneBox.id; // ID de l'élément à augmenter
+  const index = this.panier.listeDeBoxe.findIndex(uneLigne => uneLigne.boxe.id === itemToIncreaseQte);
+  let qte = 0;
+  for (let uneLigne of this.panier.listeDeBoxe) {
+    if (uneLigne.boxe.id === uneBox.id) {
+      // Si l'élément est trouvé dans le panier, augmenter sa quantité
+      uneLigne.qte++;
+      qte = uneLigne.qte;
+    }
+  }
+  // Si la quantité est désormais supérieure à 0, mettre à jour le panier
+  if (qte > 0) {
+    localStorage.setItem("panier", JSON.stringify(this.panier));
+  }
+}
+
+}
 
 //méthode pour afficher statut du panier 
-public statutPanier(){}
+//public statutPanier(){}
 
 
 
