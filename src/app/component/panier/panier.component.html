@@ -16,10 +16,16 @@
     
 
     <td> <span *ngFor="let uneLigne of panier.listeDeBoxe">
-        {{uneLigne.boxe.nom}} X {{uneLigne.qte}} 
+        {{uneLigne.boxe.nom}}                
+        <a class="btn"><i class="bi bi-dash-circle-fill"(click)="reduire(uneLigne)"></i></a>{{uneLigne.qte}}
+        <a class="btn"><i class="bi bi-plus-circle-fill" (click)="augmenter(uneLigne)"></i></a>
+        
+        
+        
         <button (click)="supprimer(uneLigne)">Supprimer de votre panier</button>
-        <button (click)="reduire(uneLigne)">Réduire</button><br><br>
-    </span></td>
+         
+        
+        </span></td>
     </tbody>
     </table>
 
