@@ -25,7 +25,18 @@ export class NosboxesComponent {
 ajouter(uneBox:Boxes){
   this.panierService.addBoxes(uneBox,1)
 }
+// 
+moyennePrix(){
+  let sommePrix=0
+  //calcule de la sommes de toute les boxes
+  for (const boxe of this.boxes){
+    sommePrix+=boxe.prix;
+  }
 
+// calcule la moyenne
+const moyennePrix = sommePrix / this.boxes.length;
 
-
+  //retourne la moyenne
+  return moyennePrix.toFixed(2)
+}
 }

@@ -32,6 +32,7 @@ public getPanier() {
 //methode qui calcule le prix du panier
 public pricePanier() {}
 
+//
 
 
 }

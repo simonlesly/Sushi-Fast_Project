@@ -11,6 +11,7 @@ import { LigneBoxes } from '../modules/LigneBoxes';
 })
 export class ManagePaniersService {
 panier:Panier
+  totalCommande: any;
   constructor() { 
     this. panier =JSON.parse(localStorage.getItem("panier") ?? JSON.stringify(new Panier(1,[],true)))
    
@@ -67,8 +68,6 @@ public deleteBoxe(uneBox: Boxes) {
 }
 
 public reducePanier(uneBox : Boxes){
- 
-
   // Rechercher l'élément à réduire dans le panier en utilisant son identifiant
   const itemToReduceQte: number = uneBox.id; // ID de l'élément à réduire
   const index = this.panier.listeDeBoxe.findIndex(uneLigne => uneLigne.boxe.id === itemToReduceQte);
@@ -82,7 +81,7 @@ public reducePanier(uneBox : Boxes){
   if(qte<1){
         this.panier.listeDeBoxe.splice(index,1)
   }
-
+  
 
   // Mettre à jour le panier dans le stockage local avec la nouvelle version du panier
   localStorage.setItem("panier", JSON.stringify(this.panier));
@@ -105,14 +104,10 @@ public reducePanier(uneBox : Boxes){
     localStorage.setItem("panier", JSON.stringify(this.panier));
   }
 }
-
 }
 
-//méthode pour afficher statut du panier 
-//public statutPanier(){}
 
 
 
 
-} 
 
