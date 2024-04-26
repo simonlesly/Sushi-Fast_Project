@@ -17,22 +17,11 @@ export class ManageBoxesService {
       return this.http.get(environment.apiBaseUrl);
       }
 
-//methode qui ajoute les boxes au panier
-public addBoxes() {}
-
-//methode qui supprime les boxes du panier
-public delete() {}
-
-//methode qui consulte le contenue ldu panier
+//methode qui consulte le contenue du panier
 public getPanier() {
   let panier= Panier
   return panier
 }
-
-//methode qui calcule le prix du panier
-public pricePanier() {}
-
-//
 
 
 }
